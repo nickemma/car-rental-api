@@ -1,3 +1,5 @@
+config.active_storage.service = :local
+
 test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
