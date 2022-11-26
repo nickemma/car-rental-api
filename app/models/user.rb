@@ -4,4 +4,9 @@ class User < ApplicationRecord
 
   has_many :reservations
   has_many :cars, through: :reservations
+
+  def admin?
+    admin
+  end
+
 end
