@@ -5,7 +5,7 @@ class CarSerializer < ActiveModel::Serializer
     return unless object.image.attached?
 
     {
-      url: rails_blob_url(object.image)
+      url: rails_blob_url(object.image, host: :localhost)
     }
   end
 end
