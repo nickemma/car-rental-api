@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     if @user.save
       render json: @user
     else
-      render json: { errors: ['Something went wrong'] }
+      render json: { error: 'Something went wrong' }, status: :bad_request
     end
   end
 

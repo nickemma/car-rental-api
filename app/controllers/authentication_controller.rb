@@ -6,7 +6,7 @@ class AuthenticationController < ApplicationController
     if user.authenticate(params[:password])
       render json: user
     else
-      render json: { errors: ['Invalid email or password'] }
+      render json: { error: 'Invalid email or password' }, status: :unauthorized
     end
   end
 end

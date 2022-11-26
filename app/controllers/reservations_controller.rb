@@ -5,16 +5,21 @@ class ReservationsController < ApplicationController
     if @reservation.save
       render json: @reservation
     else
-      render json: { errors: ['Something went wrong'] }
+      render json: { error: 'Something went wrong' }, status: :bad_request
     end
   end
 
   def destroy
+    unless @current_user == Reservation.find(params[:id]).user
+      return render json: { error: 'You are not allowed' },
+                    status: :unauthorized
+    end
+
     @reservation = Reservation.find(params[:id])
     if @reservation.destroy
-      render json: { id: @reservation.id, message: 'Reservation deleted successfully' }
+      render json: { id: @reservation.id, msg: 'Reservation deleted successfully' }
     else
-      render json: { errors: ['Something went wrong'] }
+      render json: { error: 'Something went wrong' }, status: :bad_request
     end
   end
 
