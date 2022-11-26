@@ -1,26 +1,36 @@
 class CarsController < ApplicationController
+  before_action :check_admin?, only: [:create, :destroy]
+  
   def index
     @cars = Car.all
     render json: @cars
   end
 
-  def show
-    @car = Car.find(params[:id])
-    render json: @car
-  end
-
   def create
     @car = Car.new(car_params)
     if @car.save
-      render json: @car, status: :created
+      render json: @car
     else
-      render json: @car.errors, status: :unprocessable_entity
+      render json: { errors: ['Something went wrong'] }
+    end
+  end
+
+  def destroy
+    @car = Car.find(params[:id])
+    if @car.destroy
+      render json: { id: @car.id, message: 'Car deleted successfully' }
+    else
+      render json: { errors: ['Something went wrong'] }
     end
   end
 
   private
 
   def car_params
-    params.permit(:name, :description, :brand, :daily_rate, :type, :image)
+    params.permit(:name, :description, :brand, :daily_rate, :car_type, :image)
+  end
+
+  def check_admin?
+    @current_user.admin?
   end
 end
