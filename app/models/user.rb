@@ -8,5 +8,4 @@ class User < ApplicationRecord
   def admin?
     admin
   end
-
 end
