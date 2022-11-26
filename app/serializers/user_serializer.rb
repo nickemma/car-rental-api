@@ -9,7 +9,7 @@ class UserSerializer < ActiveModel::Serializer
     return unless object.avatar.attached?
 
     {
-      url: rails_blob_url(object.avatar, host: :localhost)
+      url: rails_blob_url(object.avatar)
     }
   end
 
