@@ -3,9 +3,23 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user = @current_user
     if @reservation.save
-      render json: @reservation, status: :created
+      render json: @reservation
     else
-      render json: @reservation.errors, status: :unprocessable_entity
+      render json: { error: 'Something went wrong' }, status: :bad_request
+    end
+  end
+
+  def destroy
+    unless @current_user == Reservation.find(params[:id]).user
+      return render json: { error: 'You are not allowed' },
+                    status: :unauthorized
+    end
+
+    @reservation = Reservation.find(params[:id])
+    if @reservation.destroy
+      render json: { id: @reservation.id, msg: 'Reservation deleted successfully' }
+    else
+      render json: { error: 'Something went wrong' }, status: :bad_request
     end
   end
 

@@ -4,9 +4,18 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      render json: @user, status: :created
+      render json: @user
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: { error: 'Something went wrong' }, status: :bad_request
+    end
+  end
+
+  def update
+    @user = @current_user
+    if @user.update(user_params)
+      render json: @user
+    else
+      render json: { error: 'Something went wrong' }, status: :unprocessable_entity
     end
   end
 

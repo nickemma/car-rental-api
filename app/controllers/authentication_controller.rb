@@ -3,10 +3,12 @@ class AuthenticationController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
+    return render json: { error: 'Invalid email or password' }, status: :unauthorized unless user
+
     if user.authenticate(params[:password])
-      render json: { token: JsonWebToken.encode(sub: user.id) }
+      render json: user
     else
-      render json: { errors: ['Invalid email or password'] }
+      render json: { error: 'Invalid email or password' }, status: :unauthorized
     end
   end
 end

@@ -4,23 +4,31 @@ class CarsController < ApplicationController
     render json: @cars
   end
 
-  def show
-    @car = Car.find(params[:id])
-    render json: @car
-  end
-
   def create
+    return render json: { error: 'You are not allowed' }, status: :unauthorized unless @current_user.admin?
+
     @car = Car.new(car_params)
     if @car.save
-      render json: @car, status: :created
+      render json: @car
     else
-      render json: @car.errors, status: :unprocessable_entity
+      render json: { error: 'Something went wrong' }, status: :bad_request
+    end
+  end
+
+  def destroy
+    return render json: { error: 'You are not allowed' }, status: :unauthorized unless @current_user.admin?
+
+    @car = Car.find(params[:id])
+    if @car.destroy
+      render json: { id: @car.id, msg: 'Car deleted successfully' }
+    else
+      render json: { error: 'Something went wrong' }, status: :bad_request
     end
   end
 
   private
 
   def car_params
-    params.permit(:name, :description, :brand, :daily_rate, :type, :image)
+    params.permit(:name, :description, :brand, :daily_rate, :car_type, :image)
   end
 end
