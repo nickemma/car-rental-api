@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_token!
+  skip_before_action :authenticate_token!, only: [:create]
 
   def create
     @user = User.new(user_params)
