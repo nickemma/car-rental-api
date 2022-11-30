@@ -1,11 +1,14 @@
 class CarSerializer < ActiveModel::Serializer
-  attributes :id, :name, :car_type, :description, :brand, :daily_rate, :image
+  attributes :id, :name, :car_type, :description, :brand, :daily_rate, :images
 
-  def image
-    return unless object.image.attached?
+  def images
+    return unless object.images.attached?
 
-    {
-      url: rails_blob_url(object.image)
-    }
+    imgs_arr = []
+
+    object.images.each do |img|
+      imgs_arr << { url: rails_blob_url(img) }
+    end
+    imgs_arr
   end
 end

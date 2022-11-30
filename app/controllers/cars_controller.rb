@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  skip_before_action :authenticate_token!, only: [:index]
+
   def index
     @cars = Car.all
     render json: @cars
@@ -29,6 +31,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.permit(:name, :description, :brand, :daily_rate, :car_type, :image)
+    params.require(:car).permit(:name, :description, :brand, :daily_rate, :car_type, images: [])
   end
 end
