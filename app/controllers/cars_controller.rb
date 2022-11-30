@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  skip_before_action :authenticate_token!, only: [:index]
+
   def index
     @cars = Car.all
     render json: @cars
