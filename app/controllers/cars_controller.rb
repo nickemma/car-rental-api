@@ -28,6 +28,17 @@ class CarsController < ApplicationController
     end
   end
 
+  def update
+    return render json: { error: 'You are not allowed' }, status: :unauthorized unless @current_user.admin?
+
+    @car = Car.find(params[:id])
+    if @car.update(car_params)
+      render json: @car
+    else
+      render json: { error: 'Something went wrong' }, status: :bad_request
+    end
+  end
+
   private
 
   def car_params
