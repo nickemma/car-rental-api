@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:destroy, :update, :index]
   resources :cars, except: [:new, :edit, :show]
-  resources :reservations, only: [:create, :destroy]
+  resources :reservations, only: [:create, :destroy, :update]
 
 end
