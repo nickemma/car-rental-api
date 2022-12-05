@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   post :auth, to: 'authentication#create'
   post :register, to: 'users#create'
   post :toggle_admin, to: 'users#toggle_admin'
