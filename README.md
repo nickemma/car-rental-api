@@ -1,92 +1,128 @@
-# Project Name
+# 📗 Table of Contents
 
-Car Rental Api
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-# Project Description
+# 📖 Exotic Rentals API <a name="about-project"></a>
 
-This project contains an API that is consumed by our React frontend. It was built using Rails as an API.
+**[Exotic Rentals API]** is a backend API for a car rental application. It allows users to create an account, login, and book a car for a specific period of time. It also allows users to view all available cars, and view a specific car. It also allows users to view all bookings made by a specific user. 
 
 ## Frontend
 
 The frontend was made with react and can be found [here](https://github.com/NickEmma/car-rental-app)
 
-## Built With
+## 🛠 Built With <a name="built-with"></a>
 
-- Languages:
-  _**Ruby**_
-  _**Postgresql**_
-  _**Bcrypt**_
-  _**JWT**_
-  _**Swagger UI**_
-- Frameworks: _**Ruby On Rails**_
-- Technologies used: _**Visual Studio Code**_
+### Tech Stack <a name="tech-stack"></a>
 
-### Requirements
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+  </ul>
+</details>
 
-In order to work on this project, you need to have the following dependencies installed:
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+  </ul>
+</details>
 
-- [Ruby](https://www.ruby-lang.org/en/)
-- [Postgresql](https://www.postgresql.org/)
-- [Node.js](https://nodejs.org/en/)
-- [Yarn](https://yarnpkg.com/)
-- [Rails](https://rubyonrails.org/)
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
 
-## Getting Started
+### Key Features <a name="key-features"></a>
 
-### Clone this repository
+- **It allows users to create an account.**
+- **It allows users to login.**
+- **It allows users to book a car for a specific period of time.**
 
-```bash
-$ git clone git@github.com:NickEmma/hello-rails-backend.git
-$ cd hello-rails-backend
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://rails-production-c0ec.up.railway.app/api-docs/index.html)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+```sh
+ gem install rails
 ```
 
-### Commands to run
+### Setup
 
-Run
+Clone this repository to your desired folder:
 
-```bash
-$ bundle install
+```sh
+  cd my-folder
+  git clone git@github.com:NickEmma/car-rental-api.git
 ```
 
-To get all the gems required for the project
+### Install
 
-Then, run
+Install this project with:
 
-```bash
-$ npm install
+```sh
+  cd car-rental-api
+  bundle install
 ```
 
-To install packages such as style linters
+### Usage
 
-To check linters locally, use
+To run the project, execute the following command:
 
-````bash
-$ rubocop
-
-
-Once you have the project correctly set up, run
-
-```bash
-$ bin/rails db:setup
-````
-
-To run all migrations, create the database for testing and for development, and insert some data into the database for you to visualize the changes
-
-Finally, each time you make changes to the project, run
-
-```bash
-$ bundle exec rspec /spec
+```sh
+  rails server
 ```
 
-In the root folder to check the consistency of the app. Please don't make changes to the tests unless completely necessary, and mention it in your PR description.
+### Run tests
 
-```bash
-$ .rails s
+To run tests, run the following command:
+
+```sh
+  rspec spec/integration
 ```
 
-For you to see the app being applied in the browser during development
+### Deployment
 
-## Author
+You can deploy this project using:
+
+```sh
+  git push heroku main
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 👥 Authors <a name="authors"></a>
 
 👤 **Nicholas Emmanuel**
 
@@ -112,30 +148,44 @@ For you to see the app being applied in the browser during development
 - Twitter: [@Abeldesalegn](https://twitter.com/abeldesalegn97)
 - LinkedIn: [Abel Desalegn](https://www.linkedin.com/in/abel-desalegn92)
 
-<!-- 👤 **mohamed Ashour**
+👤 **Mohamed Ashour** 
+- GitHub: [@githubhandle](https://github.com/AACHOURMOHAMED) 
+- Twitter: [@twitterhandle](https://twitter.com/MohamedAachour3) 
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mohamed-aachour-25405b215)
 
-- GitHub: [@githubhandle](https://github.com/AACHOURMOHAMED)
-- Twitter: [@twitterhandle](https://twitter.com/MohamedAachour3)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/mohamed-aachour-25405b215) -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🤝 Contributing
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **It will allow users to rent a car.**
+- [ ] **It will allows users to give a review for a specific car.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Give a ⭐️ if you like this project!
+## ⭐️ Show your support <a name="support"></a>
 
-## Acknowledgments
+If you like this project consider giving it a star ⭐️.
 
-- Microverse
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Microverse for giving me the opportunity to work on this project.
 - LazyCoders
 - Coding Partners
-- Inspiration
-- etc
 
-## 📝 License
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
