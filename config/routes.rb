@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   post :auth, to: 'authentication#create'
+  post :register, to: 'users#create'
+  post :toggle_admin, to: 'users#toggle_admin'
 
-  resources :users, only: [:create, :update]
-  resources :cars, only: [:index, :create, :destroy]
-  resources :reservations, only: [:create, :destroy]
+  resources :users, only: [:destroy, :update, :index]
+  resources :cars, except: [:new, :edit, :show]
+  resources :reservations, only: [:create, :destroy, :update]
 
 end

@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  skip_before_action :authenticate_token!, only: [:index]
+
   def index
     @cars = Car.all
     render json: @cars
@@ -26,9 +28,20 @@ class CarsController < ApplicationController
     end
   end
 
+  def update
+    return render json: { error: 'You are not allowed' }, status: :unauthorized unless @current_user.admin?
+
+    @car = Car.find(params[:id])
+    if @car.update(car_params)
+      render json: @car
+    else
+      render json: { error: 'Something went wrong' }, status: :bad_request
+    end
+  end
+
   private
 
   def car_params
-    params.permit(:name, :description, :brand, :daily_rate, :car_type, :image)
+    params.require(:car).permit(:name, :description, :brand, :daily_rate, :car_type, :image)
   end
 end
