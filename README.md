@@ -2,6 +2,10 @@
 
 Car Rental Api
 
+# Project Description
+
+This project contains an API that is consumed by our React frontend. It was built using Rails as an API.
+
 ## Frontend
 
 The frontend was made with react and can be found [here](https://github.com/NickEmma/car-rental-app)
@@ -11,6 +15,9 @@ The frontend was made with react and can be found [here](https://github.com/Nick
 - Languages:
   _**Ruby**_
   _**Postgresql**_
+  _**Bcrypt**_
+  _**JWT**_
+  _**Swagger UI**_
 - Frameworks: _**Ruby On Rails**_
 - Technologies used: _**Visual Studio Code**_
 
