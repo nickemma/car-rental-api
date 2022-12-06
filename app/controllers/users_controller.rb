@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     return render json: { error: 'You are not allowed' }, status: :unauthorized unless @current_user.admin?
 
     @user = User.find(params[:id])
-    if @user.update(admin: !@user.admin)
+    if @user.toggle!(:admin)
       render json: @user
     else
       render json: { error: 'Something went wrong' }, status: :bad_request
