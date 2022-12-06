@@ -21,7 +21,7 @@
 
 # 📖 Exotic Rentals API <a name="about-project"></a>
 
-**Exotic Rentals API** is a backend API for a car rental application. It allows users to create an account, login, and book a car for a specific period of time. It also allows users to view all available cars, and view a specific car. It also allows users to view all bookings made by a specific user. 
+**Exotic Rentals API** is a backend API for a car rental application. It allows users to create an account, login, and book a car for a specific period of time. It also allows users to view all available cars, and view a specific car. It also allows users to view all bookings made by a specific user.
 
 ## Frontend
 
@@ -148,9 +148,10 @@ You can deploy this project using:
 - Twitter: [@Abeldesalegn](https://twitter.com/abeldesalegn97)
 - LinkedIn: [Abel Desalegn](https://www.linkedin.com/in/abel-desalegn92)
 
-👤 **Mohamed Ashour** 
-- GitHub: [@githubhandle](https://github.com/AACHOURMOHAMED) 
-- Twitter: [@twitterhandle](https://twitter.com/MohamedAachour3) 
+👤 **Mohamed Ashour**
+
+- GitHub: [@githubhandle](https://github.com/AACHOURMOHAMED)
+- Twitter: [@twitterhandle](https://twitter.com/MohamedAachour3)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/mohamed-aachour-25405b215)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -179,8 +180,10 @@ If you like this project consider giving it a star ⭐️.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank Microverse for giving me the opportunity to work on this project.
+
 - LazyCoders
 - Coding Partners
+- Microverse
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
