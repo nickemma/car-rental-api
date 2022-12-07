@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
+  post :auth, to: 'authentication#create'
+  post :register, to: 'users#create'
+  put :toggle_admin, to: 'users#toggle_admin'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :users, only: [:destroy, :update, :index]
+  resources :cars, except: [:new, :edit, :show]
+  resources :reservations, only: [:create, :destroy, :update]
+
 end
